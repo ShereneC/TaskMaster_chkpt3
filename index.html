@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/style/main.css">
+    <link rel="stylesheet" href="assets/style/style.css">
+    <title>TaskMaster</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-dark navbar-expand bg-dark text-light">
+            <a class="navbar-brand" href="#">
+                <img src="assets/img/logo.png" width="45" height="45" alt="" loading="lazy">
+                <span class="ml-2">The Amazing TaskMaster!</span>
+            </a>
+        </nav>
+    </header>
+    <main class="container-fluid">
+        <div class="row">
+            <div class="col d-flex flex-row">
+                <h3 class="px-2">List Name</h3>
+                <h3 class="px-2">Color Choice</h3>
+                <span class="px-2">teal,apricot,purple</span>
+                <button type="button" class=" px-2 btn btn-success" onClick="app.listsController.createList()">Create
+                    List</button>
+            </div>
+        </div>
+        <div class="row mt-2" id="lists">
+
+        </div>
+    </main>
+    <footer class="bg-dark text-light">
+        <div class="text-center">
+            <p><small>Template made with love by Codeworks</small></p>
+        </div>
+    </footer>
+
+    <script src="app/main.js" type="module"></script>
+</body>
+
+</html>
