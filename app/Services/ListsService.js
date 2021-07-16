@@ -11,6 +11,10 @@ class ListsService {
     // console.log('Balance is', ProxyState.balance)
     // ProxyState.values = [...ProxyState.values, new Value({ title: Math.random() })]
   }
+
+  removeList(id) {
+    ProxyState.lists = ProxyState.lists.filter(l => l.id != id)
+  }
 }
 
 export const listsService = new ListsService();

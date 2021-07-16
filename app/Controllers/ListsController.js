@@ -1,6 +1,7 @@
 import { ProxyState } from "../AppState.js"
 import { listsService } from "../Services/ListsService.js"
 import { generateId } from "../Utils/GenerateId.js"
+import { loadState, saveState } from "../Utils/LocalStorage.js"
 
 
 //Private
@@ -27,9 +28,12 @@ export default class ListsController {
   constructor() {
     console.log('Hello from the ListsController Class constructor');
     ProxyState.on('lists', _draw)
+    ProxyState.on('lists', saveState)
     // ProxyState.on('balance', drawMoney)
     // _draw()
     // drawMoney()
+
+    loadState()
 
   }
 
@@ -51,7 +55,13 @@ export default class ListsController {
     //   console.log('add money button was clicked')
     //   listsService.addMoney()
     listsService.createList(rawList)
+    form.reset()
   }
 
+
+  removeList(id) {
+    console.log(id, 'this is the id')
+    listsService.removeList(id)
+  }
 }
 

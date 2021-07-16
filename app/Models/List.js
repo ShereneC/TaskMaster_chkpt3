@@ -15,6 +15,7 @@ export default class List {
         <div class="row">
             <div class="col bg-secondary rounded-top">
                 <h3>${this.name}</h3>
+                <button type="button" class="btn btn-light ml-3" onclick="app.listsController.removeList('${this.id}')">trash</button>
             </div>
         </div>
         <div class="row">
