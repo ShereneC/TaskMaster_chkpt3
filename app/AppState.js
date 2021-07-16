@@ -7,7 +7,9 @@ import { isValidProp } from "./Utils/isValidProp.js"
 class AppState extends EventEmitter {
   /** @type {Value[]} */
   values = []
-  lists = [new List('This Weekend', generateId()), new List('Next Weekend', generateId()), new List('Next Month', generateId())]
+  lists = []
+
+  // new List('This Weekend', 'teal', generateId()), new List('Next Weekend', 'blue', generateId()), new List('Next Month', 'purple', generateId())
 
 }
 

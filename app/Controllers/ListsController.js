@@ -1,11 +1,12 @@
 import { ProxyState } from "../AppState.js"
 import { listsService } from "../Services/ListsService.js"
+import { generateId } from "../Utils/GenerateId.js"
 
 
 //Private
 function _draw() {
-  console.log('hello from function draw in listscontroller')
   let lists = ProxyState.lists
+  console.log(lists)
   let template = ''
   lists.forEach(l => template += l.Template)
   document.getElementById("lists").innerHTML = template
@@ -25,22 +26,31 @@ function _draw() {
 export default class ListsController {
   constructor() {
     console.log('Hello from the ListsController Class constructor');
-    //   ProxyState.on("values", _draw);
+    ProxyState.on('lists', _draw)
     // ProxyState.on('balance', drawMoney)
-    _draw()
+    // _draw()
     // drawMoney()
 
   }
 
-  createList() {
+  createList(e) {
     console.log('button click went through controller')
+    e.preventDefault()
+    let form = e.target
+    console.log(form)
+    let rawList = {
+      name: form.name.value,
+      color: form.color.value,
+      id: generateId(),
+    }
+    _draw()
     //   valuesService.addValue()
     // }
 
     // addMoney() {
     //   console.log('add money button was clicked')
     //   listsService.addMoney()
-    listsService.createList()
+    listsService.createList(rawList)
   }
 
 }
