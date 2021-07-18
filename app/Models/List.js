@@ -11,29 +11,42 @@ export default class List {
     get Template() {
 
         return /*html*/`
-        <div class="col-3  bg-primary rounded shadow-dark m-2">
+        <div class="col-md-4 col-sm-12  bg-primary rounded shadow-dark m-2">
         <div class="row">
-            <div class="col bg-secondary rounded-top">
-                <h3>${this.name}</h3>
-                <button type="button" class="btn btn-light ml-3" onclick="app.listsController.removeList('${this.id}')">trash</button>
+            <div class="col bg-secondary rounded-top d-flex justify-content-between">
+                <h3 class="m-0">${this.name}</h3>
+                <button type="button" class="btn btn-light p-0" onclick="app.listsController.removeList('${this.id}')">❌</button>
             </div>
         </div>
         <div class="row">
             <div class="col">
+            <p>Tasks:</p>
                 <ul>
-                    <li>Sweep the Garage</li>
-                    <li>Weed the Garden</li>
-                    <li>Mow the Lawn</li>
+                ${this.MyTasks}
                 </ul>
             </div>
         </div>
         <div class="row">
-            <div class="col d-flex flex-row">
-                <h6>Add Task</h6>
-                <button type="button" class="btn btn-primary">+</button>
+            <div class="col d-flex">
+            <form onsubmit="app.listsController.addTask('${this.id}')" class="d-flex  align-items-center justify-content-between">
+              <input type="text" name="task" id="task" placeholder="Add task..." required>
+              <button type="submit" class="btn btn-primary p-0">➕</button>
+            </form>
             </div>
         </div>
     </div>
         `
+    }
+
+    get MyTasks() {
+        let template = ''
+        let tasksTotal = 0
+        let tasks = ProxyState.tasks.filter(task => task.listId === this.id)
+        tasks.forEach(t => {
+            template += t.Template
+            tasksTotal++
+        })
+        template += `<p>Completed:</p><p>0/${tasksTotal}</p>`
+        return template
     }
 }

@@ -1,7 +1,4 @@
-import List from "./Models/List.js"
-import Value from "./Models/List.js"
 import { EventEmitter } from "./Utils/EventEmitter.js"
-import { generateId } from "./Utils/GenerateId.js"
 import { isValidProp } from "./Utils/isValidProp.js"
 
 class AppState extends EventEmitter {
@@ -10,7 +7,7 @@ class AppState extends EventEmitter {
   lists = []
 
   // new List('This Weekend', 'teal', generateId()), new List('Next Weekend', 'blue', generateId()), new List('Next Month', 'purple', generateId())
-
+  tasks = []
 }
 
 

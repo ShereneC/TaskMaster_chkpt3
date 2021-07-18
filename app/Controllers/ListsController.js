@@ -28,7 +28,9 @@ export default class ListsController {
   constructor() {
     console.log('Hello from the ListsController Class constructor');
     ProxyState.on('lists', _draw)
+    ProxyState.on('tasks', _draw)
     ProxyState.on('lists', saveState)
+    ProxyState.on('tasks', saveState)
     // ProxyState.on('balance', drawMoney)
     // _draw()
     // drawMoney()
@@ -62,6 +64,17 @@ export default class ListsController {
   removeList(id) {
     console.log(id, 'this is the id')
     listsService.removeList(id)
+  }
+
+  addTask(listId) {
+    event.preventDefault()
+    let form = event.target
+    let rawTask = {
+      name: form.task.value,
+      listId,
+    }
+    listsService.addTask(rawTask)
+    form.reset()
   }
 }
 
