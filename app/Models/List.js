@@ -40,13 +40,17 @@ export default class List {
 
     get MyTasks() {
         let template = ''
+        let completed = 0
         let tasksTotal = 0
         let tasks = ProxyState.tasks.filter(task => task.listId === this.id)
         tasks.forEach(t => {
             template += t.Template
             tasksTotal++
+            if (task.status == true) {
+                completed++
+            }
         })
-        template += `<p>Completed:</p><p>0/${tasksTotal}</p>`
+        template += `<p>Completed:</p><p>${completed}/${tasksTotal}</p>`
         return template
     }
 }

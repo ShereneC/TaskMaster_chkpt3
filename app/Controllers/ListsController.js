@@ -72,9 +72,16 @@ export default class ListsController {
     let rawTask = {
       name: form.task.value,
       listId,
+      status: document.getElementById("complete")
     }
+    console.log("add task worked")
+    console.log(rawTask)
     listsService.addTask(rawTask)
     form.reset()
+  }
+
+  removeTask(id) {
+    listsService.removeTask(id)
   }
 }
 
