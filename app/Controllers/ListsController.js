@@ -62,8 +62,11 @@ export default class ListsController {
 
 
   removeList(id) {
+    let remove = confirm("Remove the list?");
+    if (remove == true) {
+      listsService.removeList(id)
+    }
     console.log(id, 'this is the id')
-    listsService.removeList(id)
   }
 
   addTask(listId) {
@@ -81,7 +84,10 @@ export default class ListsController {
   }
 
   removeTask(id) {
-    listsService.removeTask(id)
+    let removeTask = confirm("Remove the task?");
+    if (removeTask == true) {
+      listsService.removeTask(id)
+    }
   }
 }
 

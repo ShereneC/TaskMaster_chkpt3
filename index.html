@@ -19,6 +19,7 @@
             <a class="navbar-brand" href="#">
                 <img src="assets/img/logo.png" width="45" height="45" alt="" loading="lazy">
                 <span class="ml-2">The Amazing TaskMaster!</span>
+                <div class="swatch"></div>
             </a>
         </nav>
     </header>
@@ -26,16 +27,17 @@
         <div class="row">
             <div class="col-md-8 mt-2">
                 <form onsubmit="app.listsController.createList(event)"
-                    class="text-light d-flex flex-row align-items-center">
+                    class="text-light d-flex form-row align-items-center">
                     <input type="text" name="name" id="name" class="form-control m-1" placeholder="Name of List"
-                        required minlength="4">
+                        required minlength="3" maxlength="15">
                     <div class="form-group m-1 d-flex">
                         <label for="color m-1">Color</label>
                         <select class="form-control m-1" name="color" id="color">
-                            <option>Teal</option>
-                            <option selected>Apricot</option>
-                            <option>Fuchsia</option>
-                            <option>Lime</option>
+                            <option class="teal" selected>Teal</option>
+                            <option class="slate">Slate</option>
+                            <option class="coral">Coral</option>
+                            <option class="fuchsia">Fuchsia</option>
+                            <option class="lime">Lime</option>
                         </select>
                     </div>
                     <button type="submit" class=" px-2 m-1 btn btn-success"

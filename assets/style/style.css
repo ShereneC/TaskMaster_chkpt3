@@ -1,3 +1,37 @@
 ul {
   list-style-type: none;
 }
+
+select, option {
+  width: 100px;
+}
+
+
+.teal {
+  background-color: teal;
+  color: white;
+}
+.coral {
+  background-color: #FF7F50;
+  color: white;
+}
+.fuchsia {
+  background-color: #C71585;
+  color: white;
+}
+.lime {
+  background-color: #00FF00;
+  color: white;
+}
+.slate {
+  background-color: #6A5ACD;
+  color: white;
+}
+.swatch {
+  height: 15px;
+  width: 15px;
+  background-color: teal;
+  border-radius: 50%;
+  display: inline-block
+
+}

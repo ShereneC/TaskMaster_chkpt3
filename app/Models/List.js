@@ -11,7 +11,7 @@ export default class List {
     get Template() {
 
         return /*html*/`
-        <div class="col-md-4 col-sm-12  bg-primary rounded shadow-dark m-2">
+        <div class="col-md-4 col-sm-12 ${this.color.toLowerCase()} rounded shadow-dark m-2">
         <div class="row">
             <div class="col bg-secondary rounded-top d-flex justify-content-between">
                 <h3 class="m-0">${this.name}</h3>
@@ -29,7 +29,7 @@ export default class List {
         <div class="row">
             <div class="col d-flex">
             <form onsubmit="app.listsController.addTask('${this.id}')" class="d-flex  align-items-center justify-content-between">
-              <input type="text" name="task" id="task" placeholder="Add task..." required>
+              <input type="text" name="task" id="task" placeholder="Add task..." required minlength="3" maxlength="50">
               <button type="submit" class="btn btn-primary p-0">➕</button>
             </form>
             </div>
