@@ -5,11 +5,11 @@ export default class Task {
     this.name = name
     this.listId = listId
     this.id = id
-    this.status = false
+    this.status = status
   }
   get Template() {
     return `
-  <li><span><input type="checkbox" id="complete" name="complete" value="true" class="mr-2"></span>${this.name}<span class="action ml-2" onclick="app.listsController.removeTask('${this.id}')">✖</span></li>
+  <li><span><input type="checkbox" id="complete" name="complete" value="false" class="mr-2"}></span>${this.name}<span class="action ml-2" onclick="app.listsController.removeTask('${this.id}')">✖</span></li>
   `
   }
 }

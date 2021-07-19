@@ -50,7 +50,7 @@ export default class List {
                 completed++
             }
         })
-        template += `<p>Completed:</p><p>${completed}/${tasksTotal}</p>`
+        template += `<p class="mt-2 mb-0">Completed:</p><p>${completed}/${tasksTotal}</p>`
         return template
     }
 }

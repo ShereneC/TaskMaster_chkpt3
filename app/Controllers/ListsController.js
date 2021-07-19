@@ -40,10 +40,10 @@ export default class ListsController {
   }
 
   createList(e) {
-    console.log('button click went through controller')
+    // console.log('button click went through controller')
     e.preventDefault()
     let form = e.target
-    console.log(form)
+    // console.log(form)
     let rawList = {
       name: form.name.value,
       color: form.color.value,
